@@ -1,0 +1,82 @@
+body {
+  background-image: url('images/wood-background.jpg');
+}
+#flip-container {
+  position: relative;
+  margin: 10px auto;
+  width: 500px;
+  height: 500px;
+  z-index: 1;
+}
+.flip-card {
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+  -webkit-transition: all 1.0s linear;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: all 1.0s linear;
+  -moz-transform-style: preserve-3d;
+
+  -o-transition: all 1.0s linear;
+  -o-transform-style: preserve-3d;
+  
+}
+.hover-content:hover .flip-card {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+
+.envelope {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 500px;
+}
+.envelope.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: block;
+  box-sizing: border-box;
+}
+.envelope img {
+  width: 500px;
+}
+
+.center-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+
+.fadeout {
+  animation-name: fadeout;
+}
+
+#envelope-content {
+  display: none;
+  position: relative;
+  /* top: 50px; */
+  left: -50%;
+  width: auto;
+  height: 650px;
+  z-index: 1;
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
